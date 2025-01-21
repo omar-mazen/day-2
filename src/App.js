@@ -5,19 +5,19 @@ import Explore from "./components/Explore";
 import NavBar from "./components/NavBar";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [popularMovies, setPopularMovies] = useState([]);
   useEffect(function () {
     (async () =>
       setPopularMovies(await MoviesControllers.getPopularMovies()))();
-    return () => setIsLoading(false);
+    // return () => setIsLoading(false);
   }, []);
-  if (isLoading)
-    return (
-      <div className="loading">
-        <p>loading...</p>
-      </div>
-    );
+  // if (isLoading)
+  //   return (
+  //     <div className="loading">
+  //       <p>loading...</p>
+  //     </div>
+  //   );
   return (
     <>
       <NavBar />
