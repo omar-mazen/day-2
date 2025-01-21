@@ -1,0 +1,231 @@
+:root {
+  --primary-background: #192026;
+  --secondary-background: #374151;
+
+  --primary-text: white;
+  --secondary-text: #868686;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+}
+:disabled {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+body {
+  background-color: var(--primary-background);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--primary-text);
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+section:first-of-type {
+  margin-top: 20px;
+}
+section {
+  margin-bottom: 50px;
+}
+/* ======= */
+/* NAV BAR */
+/* ======= */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.2);
+}
+nav img {
+  width: 100px;
+}
+nav ul {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  font-size: smaller;
+  color: var(--secondary-background);
+  font-weight: 500;
+}
+nav ul li {
+  cursor: pointer;
+}
+nav input {
+  border-radius: 20px;
+  border: 0;
+  background-color: var(--secondary-background);
+  padding: 5px 10px;
+}
+/* ======= */
+/* EXPLORE */
+/* ======= */
+.explore .section-title {
+  font-size: x-large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+.explore .section-desc {
+  margin: 10px 0 15px;
+  font-size: smaller;
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+.explore .banner {
+  position: relative;
+  padding: 50px;
+  border-radius: 12px;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.explore .banner::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(45deg, var(--primary-background), transparent);
+}
+.explore .banner p {
+  position: relative;
+  z-index: 3;
+}
+.explore .banner .title,
+.explore .banner p {
+  width: calc(50% - 50px);
+}
+.explore .banner .title {
+  font-size: large;
+  font-weight: bold;
+}
+.explore .banner .desc {
+  padding-top: 10px;
+  font-size: small;
+  font-weight: lighter;
+}
+/* ========== */
+/* MOVIE LIST */
+/* ========== */
+
+.movie-list .list-title {
+  padding: 10px 0;
+  font-size: x-large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+.movie-list ul {
+  display: flex;
+  gap: 15px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.movie-list .movie-card {
+  width: 170px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.movie-list .movie-card:hover img {
+  opacity: 1;
+}
+
+.movie-list .movie-card figure {
+  width: 170px;
+  height: auto;
+  aspect-ratio: 2/3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.movie-list .movie-card figure img {
+  width: 100%;
+  opacity: 0.6;
+  transition: all 0.5s linear;
+}
+.movie-list .movie-card .movie-name {
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* bootstrab media queries */
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
